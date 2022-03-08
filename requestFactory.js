@@ -1,5 +1,5 @@
-const axiosClient = require('./axiosClass.js')
-const fetchClient = require('./fetchClass.js')
+const axiosClient = require('./clientModules/axiosClass.js')
+const fetchClient = require('./clientModules/fetchClass.js')
 
 const requestFactory = (clientType = 'axios') => {
     if (clientType ===  'axios'){

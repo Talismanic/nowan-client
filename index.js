@@ -1,5 +1,3 @@
-const axiosClient = require('./axiosClass.js')
-const fetchClient = require('./fetchClass.js')
 const requestFactory = require('./requestFactory.js')
 
 // mock server url for post test:
