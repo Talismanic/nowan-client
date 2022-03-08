@@ -24,13 +24,13 @@ const config = {
     method: 'get'
 }
 
-// const params = {
-//     answer : 42
-// }
-
 const params = {
-    id : 2
+    answer : 42
 }
+
+// const params = {
+//     id : 2
+// }
 
 
 const headers = {
@@ -39,9 +39,6 @@ const headers = {
     'Accept': 'application/json'
 }
 
-// let requestObj = axiosClient.Request
-// let requestObj = fetchClient.Request
-// const r1 = new requestObj()
 
 const r1 = requestFactory()
 
