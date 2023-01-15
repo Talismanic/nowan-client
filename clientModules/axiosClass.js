@@ -45,18 +45,24 @@ class Request {
     }
 
     setHeaders(headers) {
-
-        // if (Object.keys(headers).length > 0 ){
-        //     this.headers = headers
-        // }
+        /*
+        This is an attempt to append Accept and Content-Type headers even if it is not passed from consumer. 
+        If anyone wants this feature, they can uncomment this portion.
         
-        // else{
-        //     updatedHeaders = {
-        //         'Accept': 'application/json',
-        //         'Content-Type' : 'application/json',
-        //       }
-        //     this.headers = updatedHeaders
-        // }
+        if (Object.keys(headers).length > 0 ){
+            this.headers = headers
+        }
+        
+        else{
+            updatedHeaders = {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json',
+              }
+            this.headers = updatedHeaders
+        }
+        */
+
+        
         this.headers = headers    
         return this
         
@@ -91,28 +97,14 @@ class Request {
  
 
    async makeRequest(){
-        // console.log(this.config.url)
-        // console.log(this.config.method)
-        // console.log(this.params)
-        // console.log(this.headers)
-        let res =  await axios(this.config, this.params, this.headers);
-        // let myClient = axios.create(this.config)
 
-        // if (! this.logEnabled){
-        //     let res = await myClient(this.params)
-        // }
-        // else {
-        //     myClient.interceptors.request.use(request => {
-        //         console.log('Starting Request', JSON.stringify(request, null, 2))
-        //         return request
-        //       })
-        //       let res = await myClient(this.params)
-        // }
+        let res =  await axios(this.config, this.params, this.headers);
+        /*
+        I had plan to use Interceptors to give some advanced features. Hopefully I will manage some time to do so. 
+        */
         let data = res.data;
-        // console.log(data)
         return data
 
-        // return 6
     }
 
 

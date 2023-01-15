@@ -95,9 +95,7 @@ class Request {
  
 
    async makeRequest(){
-        // console.log(this.url)
-        // console.log(this.options)
-        // console.log(this.headers)
+
         const controller = new abrtCntrlr.AbortController()
         const { signal } = controller;
         const timeoutId = setTimeout( () => controller.abort(), this.timeout)
@@ -112,35 +110,6 @@ class Request {
             throw Error('TimedOut')
 
         }
-        
-        // let myClient = axios.create(this.config)
-
-        // if (! this.logEnabled){
-        //     let res = await myClient(this.params)
-        // }
-        // else {
-        //     myClient.interceptors.request.use(request => {
-        //         console.log('Starting Request', JSON.stringify(request, null, 2))
-        //         return request
-        //       })
-        //       let res = await myClient(this.params)
-        // }
-        
-        // console.log(data)
-        
-
-        // return 6
-    }
-
-    async makeRequestv2(){
-
-        try {
-            response = await this.makeRequest()
-            return response
-        } catch(error){
-            throw Error('Abort Error')
-        }
-
     }
 
 }
